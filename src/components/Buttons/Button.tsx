@@ -3,7 +3,7 @@ import '../../assets/styles/components/buttons.css'
 
 interface ButtonProps {
   /**
-   * Is this te principal call to action on the page?
+   * Is this the principal call to action on the page?
    */
   primary?: boolean
   /**
