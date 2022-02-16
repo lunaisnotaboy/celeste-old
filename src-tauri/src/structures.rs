@@ -1,7 +1,7 @@
 #[derive(serde::Serialize)]
-pub struct CustomResponse {
+pub struct StatusResponse {
+	pub status: bool,
     pub message: String,
-    pub other_val: usize,
 }
 
 // Possible keyspaces for the database

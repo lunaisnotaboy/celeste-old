@@ -7,12 +7,16 @@ use tauri::{
     CustomMenuItem, Manager, SystemTray, SystemTrayEvent, SystemTrayMenu, SystemTrayMenuItem,
 };
 
+use log::{debug, error, warn, info};
+
 mod config;
 mod database;
 mod setup;
 mod structures;
 
 fn main() {
+	env_logger::init();
+
     // System tray setup
     let quit = CustomMenuItem::new("quit".to_string(), "Quit");
     let hide = CustomMenuItem::new("hide".to_string(), "Hide");
@@ -32,7 +36,7 @@ fn main() {
                 size: _,
                 ..
             } => {
-                println!("left click!");
+                debug!("left click!");
             }
             SystemTrayEvent::MenuItemClick { id, .. } => match id.as_str() {
                 "quit" => {
@@ -59,7 +63,10 @@ fn main() {
             });
             Ok(())
         })
-        .invoke_handler(tauri::generate_handler![setup::cmd_test,database::database_test])
+        .invoke_handler(tauri::generate_handler![
+            setup::cmd_test,
+            database::database_test
+        ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }

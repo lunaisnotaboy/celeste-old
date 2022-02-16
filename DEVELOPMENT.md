@@ -35,6 +35,8 @@ For compatibility with blurhash, images should be displayed with a preview the s
 We should also have the ability to attach multiple images, and send messages with the images.
 I don't think that's yet a part of the matrix protocol, but we could implement it in the frontend then just send the mesages seperately.
 
+Might be nice to optimize uploaded images by default as well
+
 ### Messages
 
 We should support full markdown, including '||' for spoilers.

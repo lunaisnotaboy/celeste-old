@@ -2,7 +2,9 @@ import { Button } from '../components/Buttons/Button'
 import { invoke } from '@tauri-apps/api/tauri'
 
 function db_test() {
-  invoke('database_test', { mxc: "mxc://tg43g43g" });
+  invoke('database_test', { mxc: "mxc://tg43g43g" })
+    .then((res) => console.log(res))
+    .catch((e) => console.error(e));
 }
 
 export default function Main() {
