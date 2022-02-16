@@ -2,7 +2,7 @@
 name = 'app'
 version = '0.1.0'
 description = 'A small and cozy Matrix client inspired by Powercord.'
-authors = ['Luna Nova <her@mint.lgbt>']
+authors = ['Luna Nova <her@mint.lgbt>', 'Erin Nova <contact@the-system.eu.org>']
 license = 'MIT'
 repository = 'https://github.com/lunaisnotaboy/celeste'
 default-run = 'app'
@@ -15,7 +15,7 @@ tauri-build = { version = '1.0.0-rc.0', features = [] }
 [dependencies]
 serde_json = '1.0'
 serde = { version = '1.0', features = ['derive'] }
-tauri = { version = '1.0.0-rc.0', features = ["api-all"] }
+tauri = { version = '1.0.0-rc.0', features = ["api-all", "cli"] }
 
 [features]
 default = ['custom-protocol']

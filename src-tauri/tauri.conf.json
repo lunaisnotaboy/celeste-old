@@ -63,6 +63,16 @@
     ],
     "security": {
       "csp": "default-src 'self'"
+    },
+    "cli": {
+	"description": "Welcome to celeste!",
+	"longDescription": "Celeste is a matrix client written in Rust & tauri",
+	"beforeHelp": "",
+	"afterHelp": "",
+	"args": [],
+	"subcommands": {
+		"subcommand-name": {}
+	}
     }
   }
 }
