@@ -10,7 +10,8 @@ export default function Main() {
     <div className='main'>
       <h1>Hello, World!</h1>
 
-      <Button onClick={() => db_test()}label='Button' primary />
+      <Button label='Button' primary />
+      <Button onClick={() => db_test()} label='Database Test' primary/>
     </div>
   )
 }
