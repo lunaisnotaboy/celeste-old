@@ -4,12 +4,9 @@ import Main from './layouts/Main'
 import './assets/styles/main.css'
 import { invoke } from '@tauri-apps/api/tauri'
 
-invoke('setup', { invokeMessage: "meow" })
+invoke('cmd_test', { invokeMessage: "meow" })
 .then((res) => console.log(res))
 .catch((e) => console.error(e))
-
-invoke('cmd_b')
-.then((message) => alert(message))
 
 ReactDOM.render(
   <React.StrictMode>

@@ -7,7 +7,7 @@ async fn generate_random() -> u8 {
 }
 
 #[tauri::command]
-pub async fn setup(invoke_message: String, window: tauri::Window, database: tauri::State<'_, Database>) -> Result<String, String> {
+pub async fn cmd_test(invoke_message: String, window: tauri::Window, database: tauri::State<'_, Database>) -> Result<String, String> {
     println!("Called from {}", window.label());
     println!("Message from JS: {}", invoke_message);
 
@@ -19,7 +19,8 @@ pub async fn setup(invoke_message: String, window: tauri::Window, database: taur
     }
 }
 
-#[tauri::command]
-pub fn cmd_b() -> String {
-    "Command B".to_string()
+pub fn setup() {
+    println!("Initializing...");
+    std::thread::sleep(std::time::Duration::from_secs(5));
+    println!("Done initializing.");
 }

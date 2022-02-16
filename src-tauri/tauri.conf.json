@@ -58,8 +58,16 @@
         "width": 1280,
         "height": 720,
         "resizable": true,
-        "fullscreen": false
-      }
+        "fullscreen": false,
+		"visible": false
+      },
+	  {
+		  "width": 400,
+		  "height": 200,
+		  "decorations": false,
+		  "url": "splashscreen.html",
+		  "label": "splashscreen"
+		}
     ],
     "security": {
       "csp": "default-src 'self'"
