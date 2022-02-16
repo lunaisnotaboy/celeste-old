@@ -11,9 +11,7 @@ A small and cozy Matrix client inspired by Powercord.
 ## Development
 
 1. Follow the docs to install [tauri](https://tauri.studio/docs/getting-started/prerequisites)
-
 2. Install yarn dependencies with `yarn install`
-
 3. Run the app with `yarn tauri dev`
 
 ## License
