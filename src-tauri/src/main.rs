@@ -59,8 +59,7 @@ fn main() {
             });
             Ok(())
         })
-        .manage(database::open_database("database"))
-        .invoke_handler(tauri::generate_handler![setup::cmd_test,])
+        .invoke_handler(tauri::generate_handler![setup::cmd_test,database::database_test])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }

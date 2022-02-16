@@ -26,12 +26,14 @@ interface ButtonProps {
 export const Button = ({
   label,
   primary = false,
+  onClick,
   size = 'medium',
   ...props
 }: ButtonProps) => {
   const mode = primary ? 'button--primary' : 'button--regular'
   return (
     <button
+      onClick={onClick}
       className={['button', `button--${size}`, mode].join(' ')}
       type='button'
       {...props}

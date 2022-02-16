@@ -23,17 +23,19 @@ impl Keyspace {
 }
 
 // Replace with enum from image crate at some point
-enum ImageType {
+#[derive(bincode::Encode)]
+pub enum ImageType {
     Png,
     Jpeg,
     WebP,
 }
 
 // Struct for cached image blurhashes. Key for db storage should be mxc:// uri
+#[derive(bincode::Encode)]
 pub struct ImageCache {
-    mxc: String,
-    blurhash: String,
-    alt_text: Option<String>,
-    spoiler: bool,
-    format: ImageType,
+    pub mxc: String,
+    pub blurhash: String,
+    pub alt_text: Option<String>,
+    pub spoiler: bool,
+    pub format: ImageType,
 }

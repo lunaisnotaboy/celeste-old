@@ -1,5 +1,4 @@
 use crate::config::read_config;
-use crate::structures::Database;
 use rand::Rng;
 
 async fn generate_random() -> u8 {
@@ -11,7 +10,6 @@ async fn generate_random() -> u8 {
 pub async fn cmd_test(
     invoke_message: String,
     window: tauri::Window,
-    database: tauri::State<'_, Database>,
 ) -> Result<String, String> {
     println!("Called from {}", window.label());
     println!("Message from JS: {}", invoke_message);
