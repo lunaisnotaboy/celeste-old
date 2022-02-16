@@ -10,10 +10,10 @@
     "beforeBuildCommand": "yarn build"
   },
   "tauri": {
-	"systemTray": {
-		"iconPath": "icons/icon.png",
-		"iconAsTemplate": true
-	},
+    "systemTray": {
+      "iconPath": "icons/icon.png",
+      "iconAsTemplate": true
+    },
     "bundle": {
       "active": true,
       "targets": "all",
@@ -63,28 +63,28 @@
         "height": 720,
         "resizable": true,
         "fullscreen": false,
-		"visible": false
+        "visible": false
       },
-	  {
-		  "width": 400,
-		  "height": 200,
-		  "decorations": false,
-		  "url": "splashscreen.html",
-		  "label": "splashscreen"
-		}
+      {
+        "width": 400,
+        "height": 200,
+        "decorations": false,
+        "url": "splashscreen.html",
+        "label": "splashscreen"
+      }
     ],
     "security": {
       "csp": "default-src 'self'"
     },
     "cli": {
-	"description": "Welcome to celeste!",
-	"longDescription": "Celeste is a matrix client written in Rust & tauri",
-	"beforeHelp": "",
-	"afterHelp": "",
-	"args": [],
-	"subcommands": {
-		"subcommand-name": {}
-	}
+      "description": "Welcome to celeste!",
+      "longDescription": "Celeste is a matrix client written in Rust & tauri",
+      "beforeHelp": "",
+      "afterHelp": "",
+      "args": [],
+      "subcommands": {
+        "subcommand-name": {}
+      }
     }
   }
 }
