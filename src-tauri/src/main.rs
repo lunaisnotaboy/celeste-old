@@ -7,6 +7,7 @@ use tauri::{Manager, SystemTray, SystemTrayMenu, CustomMenuItem, SystemTrayMenuI
 
 mod setup;
 mod structures;
+mod config;
 
 fn main() {
     // System tray setup

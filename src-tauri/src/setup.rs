@@ -1,5 +1,6 @@
 use rand::Rng;
 use crate::structures::{Database};
+use crate::config::read_config;
 
 async fn generate_random() -> u8 {
     let mut rng = rand::thread_rng();
@@ -21,6 +22,10 @@ pub async fn cmd_test(invoke_message: String, window: tauri::Window, database: t
 
 pub fn setup() {
     println!("Initializing...");
+    if read_config().getbool("app.networking", "offline").unwrap().unwrap() {
+        println!("Starting up in offline mode");
+    }
+
     std::thread::sleep(std::time::Duration::from_secs(5));
     println!("Done initializing.");
 }
