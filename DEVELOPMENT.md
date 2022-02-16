@@ -9,6 +9,9 @@ The frontend probably will never directly access databases/config files, but ins
 
 `// note: idk how you want to manage themes, but rn i have an option in the config to specify a theme name`
 
+It'd be nice to bundle Twemoji with the app and use those by default, but also allow the option to use system fonts for that.
+Also we should by default give the option to use a font such as [OpenDyslexic](https://github.com/antijingoist/opendyslexic).
+
 ## Backend
 
 Options are configured using a `config.ini` file, currently in the project root.
