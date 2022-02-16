@@ -18,7 +18,8 @@ serde = { version = '1.0', features = ['derive'] }
 tauri = { version = '1.0.0-rc.0', features = ["api-all", "cli", "system-tray"] }
 
 rand = '0.8.5'
-configparser = "3.0.0"
+configparser = '3.0.0'
+sled = '0.34.7'
 
 [features]
 default = ['custom-protocol']
