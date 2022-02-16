@@ -1,13 +1,16 @@
 #![cfg_attr(
-  all(not(debug_assertions), target_os = "windows"),
-  windows_subsystem = "windows"
+    all(not(debug_assertions), target_os = "windows"),
+    windows_subsystem = "windows"
 )]
 
-use tauri::{Manager, SystemTray, SystemTrayMenu, CustomMenuItem, SystemTrayMenuItem, SystemTrayEvent};
+use tauri::{
+    CustomMenuItem, Manager, SystemTray, SystemTrayEvent, SystemTrayMenu, SystemTrayMenuItem,
+};
 
+mod config;
+mod database;
 mod setup;
 mod structures;
-mod config;
 
 fn main() {
     // System tray setup
@@ -18,8 +21,7 @@ fn main() {
         .add_native_item(SystemTrayMenuItem::Separator)
         .add_item(hide);
 
-    let system_tray = SystemTray::new()
-        .with_menu(tray_menu);
+    let system_tray = SystemTray::new().with_menu(tray_menu);
 
     tauri::Builder::default()
         .system_tray(system_tray)
@@ -32,18 +34,16 @@ fn main() {
             } => {
                 println!("left click!");
             }
-            SystemTrayEvent::MenuItemClick { id, .. } => {
-                match id.as_str() {
-                    "quit" => {
-                        std::process::exit(0);
-                    }
-                    "hide" => {
-                        let window = app.get_window("main").unwrap();
-                        window.hide().unwrap();
-                    }
-                    _ => {}
+            SystemTrayEvent::MenuItemClick { id, .. } => match id.as_str() {
+                "quit" => {
+                    std::process::exit(0);
                 }
-            }
+                "hide" => {
+                    let window = app.get_window("main").unwrap();
+                    window.hide().unwrap();
+                }
+                _ => {}
+            },
             _ => {}
         })
         .setup(|app| {
@@ -59,10 +59,8 @@ fn main() {
             });
             Ok(())
         })
-        .manage(structures::Database {})
-        .invoke_handler(tauri::generate_handler![
-            setup::cmd_test,
-        ])
+        .manage(database::open_database("database"))
+        .invoke_handler(tauri::generate_handler![setup::cmd_test,])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }

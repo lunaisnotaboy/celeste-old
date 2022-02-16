@@ -1,6 +1,6 @@
-use rand::Rng;
-use crate::structures::{Database};
 use crate::config::read_config;
+use crate::structures::Database;
+use rand::Rng;
 
 async fn generate_random() -> u8 {
     let mut rng = rand::thread_rng();
@@ -8,7 +8,11 @@ async fn generate_random() -> u8 {
 }
 
 #[tauri::command]
-pub async fn cmd_test(invoke_message: String, window: tauri::Window, database: tauri::State<'_, Database>) -> Result<String, String> {
+pub async fn cmd_test(
+    invoke_message: String,
+    window: tauri::Window,
+    database: tauri::State<'_, Database>,
+) -> Result<String, String> {
     println!("Called from {}", window.label());
     println!("Message from JS: {}", invoke_message);
 
@@ -22,7 +26,11 @@ pub async fn cmd_test(invoke_message: String, window: tauri::Window, database: t
 
 pub fn setup() {
     println!("Initializing...");
-    if read_config().getbool("app.networking", "offline").unwrap().unwrap() {
+    if read_config()
+        .getbool("app.networking", "offline")
+        .unwrap()
+        .unwrap()
+    {
         println!("Starting up in offline mode");
     }
 
