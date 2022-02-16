@@ -38,3 +38,5 @@ Custom emoji support would be good to implement too, along with stickers.
 At first I think it'd be best to design for future encryption in mind, but not actually implement it until later.
 
 Eventually we should support all encryption features though, including cross-signing.
+
+We should probably support SSO login at some point aswell.
