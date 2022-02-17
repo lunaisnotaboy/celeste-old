@@ -1,52 +1,41 @@
-# Development Notes
+# Developing Celeste
 
-## Frontend
+Hi there! As Celeste is an open-source project, there are certain
+processes we follow to make sure that the codebase is consistent
+throughout.
 
-A splashscreen is displayed while the backend runs it's setup steps.
-After that, all info is passed back and forth via tauri commands called from the frontend.
+Please read this _whole_ document before getting started, as it
+contains information that will help you.
 
-The frontend probably will never directly access databases/config files, but instead call on the backend to do that for it.
+## Running the application
 
-`// note: idk how you want to manage themes, but rn i have an option in the config to specify a theme name`
+Running the application is actually pretty easy. Now, you may be
+tempted to just run `yarn dev` and wait, but that's not how the
+desktop app works. You'll need to run `yarn tauri dev` and wait
+for everything to build. Also, do not close the window to end the
+process, as it only ends the Tauri application and not the React
+dev server.
 
-It'd be nice to bundle Twemoji with the app and use those by default, but also allow the option to use system fonts for that.
-Also we should by default give the option to use a font such as [OpenDyslexic](https://github.com/antijingoist/opendyslexic).
+## Formatting
 
-## Backend
+For Rust code, you can just format it with `cargo fmt` like you usually do.
+Just be sure to run it in [`src-tauri`](src-tauri/).
 
-Options are configured using a `config.ini` file, currently in the project root.
-I need to figure out a way to get the default config path on Linux, Windows, an MacOS at some point.
+For everything else, just run `yarn lint`. ESLint will take care
+of it.
 
-Data will *probably* be stored in a `sled` database, using various keyspaces for different sections.
-eg. blurhash cache, message cache, encryption keys, etc.
+## Other things to note
 
-The database can be managed via tauri states.
+We use [EditorConfig](https://editorconfig.org) to make sure all
+of our files are displayed correctly in whatever you use to code.
+If your editor does not have built-in support for EditorConfig,
+please follow the instructions on their website to do so.
 
-## Features
+Also, as Tauri is still unstable software, there might be bugs
+that we cannot fix. Please still report these to our
+[issue tracker](https://github.com/lunaisnotaboy/celeste/issues),
+so we can report it to Tauri ourselves.
 
-### Images
-
-Once we receive a new image, a blurhash should be computed and cached.
-It will then be displayed immediately, until the full image has been fetched.
-This could also be used for image spoilers.
-
-For compatibility with blurhash, images should be displayed with a preview the same size as the blurhash.
-
-We should also have the ability to attach multiple images, and send messages with the images.
-I don't think that's yet a part of the matrix protocol, but we could implement it in the frontend then just send the mesages seperately.
-
-Might be nice to optimize uploaded images by default as well
-
-### Messages
-
-We should support full markdown, including '||' for spoilers.
-
-Custom emoji support would be good to implement too, along with stickers.
-
-### Encryption
-
-At first I think it'd be best to design for future encryption in mind, but not actually implement it until later.
-
-Eventually we should support all encryption features though, including cross-signing.
-
-We should probably support SSO login at some point aswell.
+Please use branches for development. When it comes time
+for a new major release, we will create a new branch as well. We follow
+[Semantic Versioning](https://semver.org) for our releases.
