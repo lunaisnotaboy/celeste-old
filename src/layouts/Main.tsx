@@ -13,7 +13,7 @@ export default function Main() {
       <h1>Hello, World!</h1>
 
       <Button label='Button' primary />
-      <Button onClick={() => db_test()} label='Database Test' primary/>
+      <Button label='Database Test' onClick={() => db_test()} primary/>
     </div>
   )
 }
