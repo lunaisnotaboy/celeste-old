@@ -1,0 +1,14 @@
+{
+  "recommendations": [
+    "bungcip.better-toml",
+    "editorconfig.editorconfig",
+    "eamodio.gitlens",
+    "esbenp.prettier-vscode",
+    "rust-lang.rust",
+    "tauri-apps.tauri-vscode",
+    "styled-components.vscode-styled-components",
+    "dbaeumer.vscode-eslint",
+    "silvenon.mdx",
+    "vscode-icons-team.vscode-icons"
+  ]
+}
