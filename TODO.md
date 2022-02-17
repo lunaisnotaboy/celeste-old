@@ -4,7 +4,7 @@
 - [x] Implement basic database setup
 - [ ] Implement basic matrix code
   - [ ] Login/Register
-  - [ ] Fetch user info
+  - [x] Fetch user info
     - [ ] Fetch external user info
   - [ ] Fetch room/messages
     - [ ] Join/leave rooms

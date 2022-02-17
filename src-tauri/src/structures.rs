@@ -1,6 +1,6 @@
 #[derive(serde::Serialize)]
 pub struct StatusResponse {
-	pub status: bool,
+    pub status: bool,
     pub message: String,
 }
 
@@ -38,4 +38,13 @@ pub struct ImageCache {
     pub alt_text: Option<String>,
     pub spoiler: bool,
     pub format: ImageType,
+}
+
+// Struct for user login info
+#[derive(serde::Serialize, serde::Deserialize)]
+pub struct UserLogin {
+    pub username: String,
+    pub homeserver: matrix_sdk::reqwest::Url,
+    pub password: String,
+    pub device_id: Option<String>,
 }

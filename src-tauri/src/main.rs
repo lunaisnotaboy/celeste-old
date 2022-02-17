@@ -7,7 +7,10 @@ use tauri::{
     CustomMenuItem, Manager, SystemTray, SystemTrayEvent, SystemTrayMenu, SystemTrayMenuItem,
 };
 
-use log::{debug, error, warn, info};
+#[macro_use]
+extern crate log;
+#[macro_use]
+extern crate assign;
 
 mod config;
 mod database;
@@ -15,7 +18,7 @@ mod setup;
 mod structures;
 
 fn main() {
-	env_logger::init();
+    env_logger::init();
 
     // System tray setup
     let quit = CustomMenuItem::new("quit".to_string(), "Quit");
@@ -55,7 +58,7 @@ fn main() {
             let main_window = app.get_window("main").unwrap();
             // Perfom initialization code on new task so the app doesn't freeze
             tauri::async_runtime::spawn(async move {
-                setup::setup();
+                setup::setup().await;
 
                 // After it's done, close the splashscreen and display main window
                 splashscreen_window.close().unwrap();
@@ -64,8 +67,8 @@ fn main() {
             Ok(())
         })
         .invoke_handler(tauri::generate_handler![
-            setup::cmd_test,
-            database::database_test
+            database::database_test,
+            setup::login
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

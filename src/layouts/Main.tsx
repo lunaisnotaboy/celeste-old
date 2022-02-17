@@ -7,6 +7,12 @@ function db_test() {
     .catch((e) => console.error(e));
 }
 
+function login() {
+  invoke('login', { login: {username: "erin", homeserver:"https://chat.is-cute.ml", password: "egtw", device_id: "celeste" }})
+  .then((res) => console.log(res))
+  .catch((e) => console.error(e));
+}
+
 export default function Main() {
   return (
     <div className='main'>
@@ -14,6 +20,7 @@ export default function Main() {
 
       <Button label='Button' primary />
       <Button label='Database Test' onClick={() => db_test()} primary/>
+      <Button label='Login' onClick={() => login()} primary/>
     </div>
   )
 }

@@ -1,8 +1,8 @@
 use crate::structures::{ImageCache, ImageType, Keyspace};
-use log::{debug, error, warn, info};
 
 // Open the base database (will be stored in a tauri state)
 // Path will eventually be set differently on Windows/Linux/MacOS
+// TODO: loop until database can be opened
 pub fn open_database() -> Option<sled::Db> {
     let _config = sled::Config::default().path("database");
     //.use_compression(true)
@@ -20,7 +20,7 @@ pub fn open_database() -> Option<sled::Db> {
 }
 
 // Function to insert a blurhash struct into the database
-fn insert_blurhash(entry: ImageCache, keyspace: Keyspace) -> Result<(), String>{
+fn insert_blurhash(entry: ImageCache, keyspace: Keyspace) -> Result<(), String> {
     let db = open_database().unwrap();
     let tree = db.open_tree(keyspace.to_str()).unwrap(); // Open the keyspace
 
@@ -29,8 +29,8 @@ fn insert_blurhash(entry: ImageCache, keyspace: Keyspace) -> Result<(), String>{
     match bincode::encode_to_vec(&entry, bincode::config::standard()) {
         Ok(result) => bytes = result,
         Err(error) => {
-			return Err(error.to_string());
-		}
+            return Err(error.to_string());
+        }
     }
 
     // Insert it into the database
@@ -39,7 +39,7 @@ fn insert_blurhash(entry: ImageCache, keyspace: Keyspace) -> Result<(), String>{
         Err(error) => error!("couldn't insert blurhash: {}", error),
     }
 
-	return Ok(());
+    return Ok(());
 }
 
 // Insert a test blurhash into the database
@@ -53,8 +53,8 @@ pub async fn database_test(mxc: String) -> Result<String, String> {
         format: ImageType::Png,
     };
     match insert_blurhash(test_blurhash, Keyspace::Blurhash) {
-		Ok(_) => {},
-		Err(e) => return Err(e),
-	}
+        Ok(_) => {}
+        Err(e) => return Err(e),
+    }
     return Ok("Inserted test blurhash!".to_string());
 }
