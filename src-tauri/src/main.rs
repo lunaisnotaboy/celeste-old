@@ -1,3 +1,5 @@
+//* Startup code, tauri initialization, etc *//
+
 #![cfg_attr(
     all(not(debug_assertions), target_os = "windows"),
     windows_subsystem = "windows"
@@ -7,18 +9,21 @@ use tauri::{
     CustomMenuItem, Manager, SystemTray, SystemTrayEvent, SystemTrayMenu, SystemTrayMenuItem,
 };
 
+// Use macro's for logging
 #[macro_use]
 extern crate log;
 
+// mod all the other source files
 mod config;
 mod database;
 mod setup;
 mod structures;
 
+// Startup function
 fn main() {
     env_logger::init();
 
-    // System tray setup
+    // System tray setup (first arg is name, second is displayed label)
     let quit = CustomMenuItem::new("quit".to_string(), "Quit");
     let hide = CustomMenuItem::new("hide".to_string(), "Hide");
     let tray_menu = SystemTrayMenu::new()
