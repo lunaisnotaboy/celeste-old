@@ -14,4 +14,4 @@ Please read [`DEVELOPMENT.md`](DEVELOPMENT.md) for more information.
 
 ## License
 
-This licensed under the [MIT license](LICENSE).
+This is licensed under the [MIT license](LICENSE).
