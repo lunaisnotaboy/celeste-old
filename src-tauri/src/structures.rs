@@ -1,6 +1,6 @@
 #[derive(serde::Serialize)]
 pub struct StatusResponse {
-	pub status: bool,
+    pub status: bool,
     pub message: String,
 }
 

@@ -22,8 +22,17 @@ env_logger = '0.9.0'
 rand = '0.8.5'
 configparser = '3.0.0'
 sled = { version = '0.34.7' }
-bincode = { version = '2.0.0-beta.3', features = ['serde'] }
-matrix-sdk = { version = '0.4.1', features = ['markdown', 'socks'] }
+bincode = { version = '2.0.0-beta.3', features = ["serde"] }
+
+[dependencies.matrix-sdk]
+git = "https://github.com/jsparber/matrix-rust-sdk.git"
+features = [
+    "socks",
+    "encryption",
+    "sled_cryptostore",
+    "sled_state_store",
+    "markdown",
+]
 
 [features]
 default = ['custom-protocol']
