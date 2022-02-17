@@ -1,8 +1,9 @@
 import { Button } from '../components/Buttons/Button'
 
-/*
-import { invoke } from '@tauri-apps/api/tauri'
+import { Button } from '../components/Button'
+import React from 'react'
 
+/*
 function login() {
   invoke('login', { login: {username: "erin", homeserver:"https://chat.is-cute.ml", password: "egtw", device_id: "celeste" }})
   .then((res) => console.log(res))

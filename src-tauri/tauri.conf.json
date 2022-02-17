@@ -74,7 +74,8 @@
       }
     ],
     "security": {
-      "csp": "default-src 'self'"
+      "csp": "default-src 'self'",
+      "freezePrototype": false
     },
     "cli": {
       "description": "Welcome to celeste!",

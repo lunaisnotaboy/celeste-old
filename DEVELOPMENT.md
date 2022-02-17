@@ -18,11 +18,11 @@ dev server.
 
 ## Formatting
 
-For Rust code, you can just format it with `cargo fmt` like you usually do.
-Just be sure to run it in [`src-tauri`](src-tauri/).
+For Rust code, you can just format it with `cargo fmt` like you
+usually do. Just be sure to run it in [`src-tauri`](src-tauri/).
 
-For everything else, just run `yarn lint`. ESLint will take care
-of it.
+For everything else, just run `yarn lint`. ESLint will show you
+the errors. To fix most of them, run `yarn lint:fix`.
 
 ## Other things to note
 

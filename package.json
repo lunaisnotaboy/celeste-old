@@ -26,7 +26,6 @@
     "css-minimizer-webpack-plugin": "^3.2.0",
     "dotenv": "^10.0.0",
     "dotenv-expand": "^5.1.0",
-    "eslint": "^8.3.0",
     "eslint-config-react-app": "^7.0.0",
     "eslint-webpack-plugin": "^3.1.1",
     "file-loader": "^6.2.0",
@@ -71,7 +70,13 @@
     "test": "node scripts/test.js",
     "tauri": "tauri",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "lint": "yarn lint:eslint && yarn lint:prettier",
+    "lint:fix": "yarn lint:eslint:fix && yarn lint:prettier:fix",
+    "lint:eslint": "eslint src/**/*.{js,jsx,ts,tsx}",
+    "lint:eslint:fix": "yarn lint:eslint --fix",
+    "lint:prettier": "prettier src/**/*.{js,jsx,ts,tsx}",
+    "lint:prettier:fix": "yarn prettier --write src/**/*.{js,jsx,ts,tsx}"
   },
   "eslintConfig": {
     "extends": [
@@ -99,8 +104,15 @@
     "@storybook/react": "^6.4.19",
     "@storybook/testing-library": "^0.0.9",
     "@tauri-apps/cli": "^1.0.0-rc.2",
+    "@types/styled-components": "^5.1.22",
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
     "babel-plugin-styled-components": "^2.0.2",
-    "cross-env": "^7.0.3"
+    "cross-env": "^7.0.3",
+    "eslint": "^8.9.0",
+    "eslint-config-prettier": "^8.3.0",
+    "prettier": "^2.5.1",
+    "typescript-plugin-styled-components": "^2.0.0"
   },
   "jest": {
     "roots": [

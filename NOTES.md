@@ -17,7 +17,7 @@ Also we should by default give the option to use a font such as [OpenDyslexic](h
 Options are configured using a `config.ini` file, currently in the project root.
 I need to figure out a way to get the default config path on Linux, Windows, an MacOS at some point.
 
-Data will *probably* be stored in a `sled` database, using various keyspaces for different sections.
+Data will _probably_ be stored in a `sled` database, using various keyspaces for different sections.
 eg. blurhash cache, message cache, encryption keys, etc.
 
 The database can be managed via tauri states.
