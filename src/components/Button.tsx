@@ -42,7 +42,6 @@ const RegularButton = styled(ButtonElement)`
   background-color: transparent;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
   color: #000;
-  mix-blend-mode: screen;
 
   &:hover {
     background-color: #000;
