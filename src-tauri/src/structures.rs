@@ -39,12 +39,3 @@ pub struct ImageCache {
     pub spoiler: bool,
     pub format: ImageType,
 }
-
-// Struct for user login info
-#[derive(serde::Serialize, serde::Deserialize)]
-pub struct UserLogin {
-    pub username: String,
-    pub homeserver: matrix_sdk::reqwest::Url,
-    pub password: String,
-    pub device_id: Option<String>,
-}

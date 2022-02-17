@@ -1,4 +1,3 @@
-import { invoke } from '@tauri-apps/api/tauri'
 import Main from './layouts/Main'
 import ReactDOM from 'react-dom'
 import React from 'react'

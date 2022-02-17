@@ -9,8 +9,6 @@ use tauri::{
 
 #[macro_use]
 extern crate log;
-#[macro_use]
-extern crate assign;
 
 mod config;
 mod database;
@@ -66,10 +64,7 @@ fn main() {
             });
             Ok(())
         })
-        .invoke_handler(tauri::generate_handler![
-            database::database_test,
-            setup::login
-        ])
+        .invoke_handler(tauri::generate_handler![database::database_test,])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }
