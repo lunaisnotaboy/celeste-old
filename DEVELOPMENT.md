@@ -18,7 +18,7 @@ dev server.
 
 ## Formatting
 
-For Rust code, you can just format it with Cargo like you usually do.
+For Rust code, you can just format it with `cargo fmt` like you usually do.
 Just be sure to run it in [`src-tauri`](src-tauri/).
 
 For everything else, just run `yarn lint`. ESLint will take care
@@ -36,6 +36,6 @@ that we cannot fix. Please still report these to our
 [issue tracker](https://github.com/lunaisnotaboy/celeste/issues),
 so we can report it to Tauri ourselves.
 
-All development takes place on the main branch. When it comes time
-for a new major release, we will create a new branch. We follow
+Please use branches for development. When it comes time
+for a new major release, we will create a new branch as well. We follow
 [Semantic Versioning](https://semver.org) for our releases.
