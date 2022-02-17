@@ -1,0 +1,32 @@
+# TODO
+
+- [x] Implement basic frontend <-> backend comminication
+- [x] Implement basic database setup
+- [ ] Implement basic matrix code
+  - [ ] Login/Register
+  - [ ] Fetch user info
+    - [ ] Fetch external user info
+  - [ ] Fetch room/messages
+    - [ ] Join/leave rooms
+    - [ ] Cache messages
+    - [ ] Format messages
+  - [ ] Fetch images
+    - [ ] Implement & use blurhash
+    - [ ] Cache blurhash
+  - [ ] Fetch spaces summary
+  - [ ] Send messages
+    - [ ] Edit messages
+    - [ ] Use markdown formatting
+    - [ ] Send other file types
+  - [ ] Edit user info
+  - [ ] Edit room info
+  - [ ] Commands
+    - [ ] Role permissions
+  - [ ] App settings
+    - [ ] Notifications
+    - [ ] Offline mode
+    - [ ] Proxy
+  - [ ] Encryption support
+    - [ ] Store encryption keys
+    - [ ] Encryption options for rooms
+    - [ ] Cross-Signing
