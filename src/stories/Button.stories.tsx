@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
-import { Button } from '../components/Buttons/Button'
+import { Button } from '../components/Button'
 import React from 'react'
 
 export default {
@@ -18,16 +18,4 @@ Primary.args = {
 export const Regular = Template.bind({})
 Regular.args = {
   label: 'Button'
-}
-
-export const Large = Template.bind({})
-Large.args = {
-  label: 'Button',
-  size: 'large'
-}
-
-export const Small = Template.bind({})
-Small.args = {
-  label: 'Button',
-  size: 'small'
 }

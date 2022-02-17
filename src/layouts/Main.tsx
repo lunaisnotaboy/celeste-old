@@ -1,10 +1,11 @@
-import { Button } from '../components/Buttons/Button'
+import { Button } from '../components/Button'
 import { invoke } from '@tauri-apps/api/tauri'
+import React from 'react'
 
 function db_test() {
-  invoke('database_test', { mxc: "mxc://tg43g43g" })
+  invoke('database_test', { mxc: 'mxc://tg43g43g' })
     .then((res) => console.log(res))
-    .catch((e) => console.error(e));
+    .catch((e) => console.error(e))
 }
 
 export default function Main() {
@@ -12,8 +13,8 @@ export default function Main() {
     <div className='main'>
       <h1>Hello, World!</h1>
 
-      <Button label='Button' primary />
-      <Button label='Database Test' onClick={() => db_test()} primary/>
+      <Button label='Button' />
+      <Button label='Database Test' onClick={() => db_test()} />
     </div>
   )
 }
