@@ -13,7 +13,7 @@ export default function Main() {
     <div className='main'>
       <h1>Hello, World!</h1>
 
-      <Button label='Button' primary />
+      <Button label='Button' />
     </div>
   )
 }
