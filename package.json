@@ -69,7 +69,7 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
     "tauri": "tauri",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "cross-env BROWSER=none start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "lint": "yarn lint:eslint && yarn lint:prettier",
     "lint:fix": "yarn lint:eslint:fix && yarn lint:prettier:fix",

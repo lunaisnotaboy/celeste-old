@@ -4,7 +4,7 @@ import React from 'react'
 
 export default {
   component: Button,
-  title: 'Example/Button'
+  title: 'Components/Button'
 } as ComponentMeta<typeof Button>
 
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />
