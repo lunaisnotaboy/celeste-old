@@ -1,0 +1,12 @@
+image:
+  file: .gitpod.Dockerfile
+
+tasks:
+  - init: yarn install
+    command: yarn tauri dev
+
+vscode:
+  extensions:
+    - editorconfig.editorconfig
+    - vscode-icons-team.vscode-icons
+    - ms-azuretools.vscode-docker

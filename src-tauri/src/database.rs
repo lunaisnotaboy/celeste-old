@@ -1,4 +1,6 @@
-use crate::structures::{ImageCache, ImageType, Keyspace};
+//* Code for dealing with database operations *//
+
+use crate::structures::{BlurhashCache, ImageType, Keyspace};
 
 // Open the base database (will be stored in a tauri state)
 // Path will eventually be set differently on Windows/Linux/MacOS
@@ -20,7 +22,8 @@ pub fn open_database() -> Option<sled::Db> {
 }
 
 // Function to insert a blurhash struct into the database
-fn insert_blurhash(entry: ImageCache, keyspace: Keyspace) -> Result<(), String> {
+// TODO: error handling everywhere
+fn insert_blurhash(entry: BlurhashCache, keyspace: Keyspace) -> Result<(), String> {
     let db = open_database().unwrap();
     let tree = db.open_tree(keyspace.to_str()).unwrap(); // Open the keyspace
 
@@ -43,9 +46,11 @@ fn insert_blurhash(entry: ImageCache, keyspace: Keyspace) -> Result<(), String> 
 }
 
 // Insert a test blurhash into the database
+// TODO: replace with proper interface commands
+// Maybe make functions backend only?
 #[tauri::command]
 pub async fn database_test(mxc: String) -> Result<String, String> {
-    let test_blurhash = ImageCache {
+    let test_blurhash = BlurhashCache {
         mxc,
         blurhash: "8034jgw9aqihg".to_string(),
         alt_text: None,

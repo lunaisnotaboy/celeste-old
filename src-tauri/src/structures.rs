@@ -1,3 +1,6 @@
+//* Code for all the various struct's and enums *//
+
+// TODO: Make proper response types
 #[derive(serde::Serialize)]
 pub struct StatusResponse {
     pub status: bool,
@@ -22,7 +25,7 @@ impl Keyspace {
     }
 }
 
-// Replace with enum from image crate at some point
+// TODO: Replace with enum from image crate at some point
 #[derive(bincode::Encode)]
 pub enum ImageType {
     Png,
@@ -31,8 +34,9 @@ pub enum ImageType {
 }
 
 // Struct for cached image blurhashes. Key for db storage should be mxc:// uri
+// TODO: Replace String in mxc field with proper type from matrix_sdk
 #[derive(bincode::Encode)]
-pub struct ImageCache {
+pub struct BlurhashCache {
     pub mxc: String,
     pub blurhash: String,
     pub alt_text: Option<String>,
