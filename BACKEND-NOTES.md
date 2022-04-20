@@ -1,17 +1,5 @@
 # Backend Notes
 
-## Frontend
-
-A splashscreen is displayed while the backend runs it's setup steps.
-After that, all info is passed back and forth via tauri commands called from the frontend.
-
-The frontend probably will never directly access databases/config files, but instead call on the backend to do that for it.
-
-`// note: idk how you want to manage themes, but rn i have an option in the config to specify a theme name`
-
-It'd be nice to bundle Twemoji with the app and use those by default, but also allow the option to use system fonts for that.
-Also we should by default give the option to use a font such as [OpenDyslexic](https://github.com/antijingoist/opendyslexic).
-
 ## Backend
 
 Options are configured using a `config.ini` file, currently in the project root.
@@ -21,6 +9,9 @@ Data will _probably_ be stored in a `sled` database, using various keyspaces for
 eg. blurhash cache, message cache, encryption keys, etc.
 
 The database can be managed via tauri states.
+
+Data should be stored in the proper locations, eg `~/.config`,  `~/.local/share` for the databases, etc.
+We should make heavy use of cacheing, and store it *properly* in `~/.cache`, unlike Element.
 
 ## Features
 
