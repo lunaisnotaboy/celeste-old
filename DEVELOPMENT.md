@@ -14,7 +14,7 @@ tempted to just run `yarn dev` and wait, but that's not how the
 desktop app works. You'll need to run `yarn tauri dev` and wait
 for everything to build. Also, do not close the window to end the
 process, as it only ends the Tauri application and not the React
-dev server.
+development server.
 
 ## Formatting
 

@@ -24,13 +24,3 @@ There should also be a menu for selecting a theme, that will first apply the the
 It'd be nice to bundle Twemoji with the app and use those by default, but also allow the option to use system fonts for that.
 
 By default, we should also give the option to use a font such as [OpenDyslexic](https://github.com/antijingoist/opendyslexic).
-
-## Avatar components
-
-They are a copy of [Boring Avatars](https://github.com/boringdesigners/boring-avatars) but with types,
-so they probably do things that should be reworked for TS.
-
-## Styling components
-
-Use [Styled Components](https://styled-components.com) for this. Remember to use the correct CSS
-variables when using colors and such.
